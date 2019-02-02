@@ -12,6 +12,10 @@ A simple bot that listens for a trigger in a chat channel (specified by a regex)
 # debugging
 Use `sls logs -f message` to see output from the lambda that runs on AWS.
 
+# undeploying/removing
+1. Run `sls remove`
+2. Delete the bot you added from https://dev.groupme.com/bots.
+
 # cost
 The cost to run this should fall completely within the AWS free tier. The lambda uses 128MB of RAM, and generally takes 200ms to execute completely.
 The AWS Lambda and AWS API Gateway that are created when this project is deployed have a free tier of 1m requests (ignoring other factors since

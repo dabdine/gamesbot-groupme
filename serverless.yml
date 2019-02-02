@@ -2,7 +2,6 @@ service: gamesbot
 provider:
   name: aws
   runtime: python3.6
-  profile: personal
   memorySize: 128
   timeout: 2
 functions:

@@ -1,0 +1,18 @@
+service: gamesbot
+provider:
+  name: aws
+  runtime: python3.6
+  profile: personal
+  memorySize: 128
+  timeout: 2
+functions:
+  message:
+    handler: handler.message
+    environment:
+      GROUPME_BOT_TRIGGER_REGEX: ${env:GROUPME_BOT_TRIGGER_REGEX}
+      GROUPME_BOT_ID: ${env:GROUPME_BOT_ID}
+      GROUPME_IMAGE_LINK: ${env:GROUPME_IMAGE_LINK}
+    events:
+      - http:
+          path: /message
+          method: post
